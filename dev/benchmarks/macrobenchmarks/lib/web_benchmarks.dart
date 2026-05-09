@@ -202,15 +202,17 @@ void _fallbackToManual(String error) {
   ''');
 
   for (final String benchmarkName in benchmarks.keys) {
-    final web.Element button = web.document.querySelector('#$benchmarkName');
-    button.addEventListener(
-      'click',
-      (JSObject _) {
-        final web.Element? manualPanel = web.document.querySelector('#manual-panel');
-        manualPanel?.remove();
-        _runBenchmark(benchmarkName);
-      }.toJS,
-    );
+    final web.Element? button = web.document.querySelector('#$benchmarkName');
+    if (button != null) {
+      button.addEventListener(
+        'click',
+        (JSObject _) {
+          final web.Element? manualPanel = web.document.querySelector('#manual-panel');
+          manualPanel?.remove();
+          _runBenchmark(benchmarkName);
+        }.toJS,
+      );
+    }
   }
 }
 

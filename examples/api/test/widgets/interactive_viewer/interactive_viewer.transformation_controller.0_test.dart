@@ -40,7 +40,7 @@ void main() {
     const Offset scaleStart1 = Offset(400.0, 300.0);
     const Offset scaleStart2 = scaleStart1 + Offset(10.0, 0.0);
     const Offset scaleEnd1 = scaleStart1 - Offset(10.0, 0.0);
-    const Offset scaleEnd2 = scaleStart2 + const Offset(10.0, 0.0);
+    const Offset scaleEnd2 = scaleStart2 + Offset(10.0, 0.0);
     final TestGesture gesture1 = await tester.createGesture();
     final TestGesture gesture2 = await tester.createGesture();
     await gesture1.down(scaleStart1);
